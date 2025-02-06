@@ -2,6 +2,8 @@ package org.hackerrank;
 
 import java.util.Scanner;
 
+import static java.lang.Character.FORMAT;
+
 public class JavaOutputFormatting {
 
     public static void main(String[] args) {
@@ -11,30 +13,27 @@ public class JavaOutputFormatting {
         for (int i = 0; i < 3; i++) {
             String s1 = sc.next();
             int x = sc.nextInt();
-            formatNumberWithLeadingZeros(x, s1);
+            formatNumberManually(x, s1);
         }
         System.out.println("================================");
         sc.close();
     }
 
-    private static void formatNumberWithLeadingZeros(int x, String s1){
-        String numByCero;
-        if(x <= 99){
-            if(String.valueOf(x).length() < 2){
-                numByCero = "00"+x;
-                System.out.println(String.format("%-15s%s", s1, numByCero));
-            }else {
-
-                String num = Integer.toString(x);
-                numByCero = "0" + num;
-                System.out.println(String.format("%-15s%s", s1, numByCero));
-            }
-        }else{
-            System.out.println(String.format("%-15s%s", s1, x));
+    private static void formatNumberManually(int x, String s1){
+        while (s1.length() < 15) {
+            s1 += " ";
         }
 
+        String numStr = "";
+        if(x < 10){
+            numStr = "00" + x;
+        } else if (x < 100) {
+            numStr = "0" + x;
+        }else {
+            numStr = "" + x;
+        }
+        System.out.println(s1 + numStr);
     }
-
 }
 
 
