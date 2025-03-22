@@ -35,7 +35,7 @@ public class FunctionalInterfaceEjemplos {
      StreamSupport.stream → Construye y retorna un Stream<Integer> secuencial.
     * */
 
-
+/*Cuando haces listaNumerica.stream(), el método stream() se ejecuta en el contexto de listaNumerica. En Java, dentro de un método de instancia, this siempre se refiere al objeto actual (en este caso, la lista [1, 2, 3]).*/
 
     LinkedList<String> numberList2 = new LinkedList<>(List.of("1", "2", "3"));
 
@@ -54,7 +54,7 @@ public class FunctionalInterfaceEjemplos {
 
     public static void main(String[] args) {
         FunctionalInterfaceEjemplos fi = new FunctionalInterfaceEjemplos();
-        fi.flujo.forEach(System.out::println);
+        fi.list.forEach(System.out::println);
     }
 
 }
