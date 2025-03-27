@@ -51,6 +51,64 @@ public class FunctionalInterfaceEjemplos {
     Stream<Integer> flujo = listaNumerica.stream();
 
 
+    /*
+
+    default Stream<E> stream() {
+        return StreamSupport.stream(spliterator(), false);
+    }
+
+      @Override
+    default Spliterator<E> spliterator() {
+        return Spliterators.spliterator(this, 0);
+    }
+
+    public static <T> Spliterator<T> spliterator(Collection<? extends T> c,
+                                                 int characteristics) {
+     return new IteratorSpliterator<>(Objects.requireNonNull(c),
+                                         characteristics);
+    }
+
+
+     public IteratorSpliterator(Collection<? extends T> collection, int characteristics) {
+            this.collection = collection;
+            this.it = null;
+            this.characteristics = (characteristics & Spliterator.CONCURRENT) == 0
+                                   ? characteristics | Spliterator.SIZED | Spliterator.SUBSIZED
+                                   : characteristics;
+        }
+
+
+
+    public static <T> Stream<T> stream(Spliterator<T> spliterator, boolean parallel) {
+        Objects.requireNonNull(spliterator);
+        return new ReferencePipeline.Head<>(spliterator,
+                                            StreamOpFlag.fromCharacteristics(spliterator),
+                                            parallel);
+    }
+
+
+
+
+///////
+abstract class ReferencePipeline<P_IN, P_OUT>
+        extends AbstractPipeline<P_IN, P_OUT, Stream<P_OUT>>
+        implements Stream<P_OUT>  {
+
+
+////////
+
+static class Head<E_IN, E_OUT> extends ReferencePipeline<E_IN, E_OUT> {
+
+      Head(Spliterator<?> source,
+             int sourceFlags, boolean parallel) {
+            super(source, sourceFlags, parallel);
+        }
+
+    * */
+
+
+
+
 
     public static void main(String[] args) {
         FunctionalInterfaceEjemplos fi = new FunctionalInterfaceEjemplos();
