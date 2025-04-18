@@ -35,21 +35,22 @@ public class FunctionalInterfaceEjemplos {
      StreamSupport.stream → Construye y retorna un Stream<Integer> secuencial.
     * */
 
-/*Cuando haces listaNumerica.stream(), el método stream() se ejecuta en el contexto de listaNumerica. En Java, dentro de un método de instancia, this siempre se refiere al objeto actual (en este caso, la lista [1, 2, 3]).*/
+/*Cuando haces listaNumerica.stream(), el metodo stream() se ejecuta en el contexto de listaNumerica. En Java, dentro de un metodo de instancia, this siempre se refiere al objeto actual (en este caso, la lista [1, 2, 3]).*/
 
-    LinkedList<String> numberList2 = new LinkedList<>(List.of("1", "2", "3"));
 
-    List<String> list = numberList2.stream()
-            .map(n -> "Numeros" + n)
-            .collect(Collectors.toList());
+    public void mostrarData(){
 
-    List<String> numberList = List.of(1,2,3,4,5).stream()
-            .map(n -> "Numeros: " +n)
-            .collect(Collectors.toList());
+        LinkedList<String> numberList2 = new LinkedList<>();
 
-    List<Integer> listaNumerica = List.of(1,2,3,4,5);
-    Stream<Integer> flujo = listaNumerica.stream();
+        numberList2.add("hola");
+        numberList2.add("hola2");
 
+        List<String> list = numberList2.stream()
+                .map(n -> "Numeros" + n)
+                .peek( n -> System.out.println(n))
+                .collect(Collectors.toList());
+
+    }
 
     /*
 
@@ -105,14 +106,11 @@ static class Head<E_IN, E_OUT> extends ReferencePipeline<E_IN, E_OUT> {
         }
 
     * */
-
-
-
-
+    
 
     public static void main(String[] args) {
-        FunctionalInterfaceEjemplos fi = new FunctionalInterfaceEjemplos();
-        fi.list.forEach(System.out::println);
+        FunctionalInterfaceEjemplos objeto = new FunctionalInterfaceEjemplos();
+        objeto.mostrarData();
     }
 
 }
