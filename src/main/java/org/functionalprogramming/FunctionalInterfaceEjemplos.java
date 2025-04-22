@@ -54,10 +54,17 @@ public class FunctionalInterfaceEjemplos {
 
     public void mostrarNombres(){
         List<String> nombres = new ArrayList<>();
-        nombres = List.of("Juan","Pedro","Judas");
+        nombres = List.of(
+                "Hola mundo",
+                "Java es un lenguaje poderoso",
+                "Stream API es funcional",
+                "Vamos a dormir"
+        );
 
         nombres.stream()
-                .map(n -> "Hola" + n)
+                .filter(n -> n.equals(n.toUpperCase()))
+                .filter(n -> n.length()> 4 )
+                .map(n -> "Nombre válido: " + n)
                 .forEach(System.out::println);
     }
 
