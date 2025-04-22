@@ -45,10 +45,9 @@ public class FunctionalInterfaceEjemplos {
         numberList2.add("hola");
         numberList2.add("hola2");
 
-        List<String> list = numberList2.stream()
+        numberList2.stream()
                 .map(n -> "Numeros" + n)
-                .peek( n -> System.out.println(n))
-                .collect(Collectors.toList());
+                .forEach(System.out::println);
 
     }
 
