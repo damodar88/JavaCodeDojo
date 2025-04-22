@@ -2,6 +2,7 @@ package org.functionalprogramming;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -48,9 +49,14 @@ public class FunctionalInterfaceEjemplos {
         numberList2.stream()
                 .map(n -> "Numeros" + n)
                 .forEach(System.out::println);
-
     }
 
+    public static void ejecutarCadaElemento(String [] cadena, Consumer<String> action){
+
+        for(String elemento: cadena){
+            action.accept(elemento);
+        }
+    }
     /*
 
     default Stream<E> stream() {
@@ -109,7 +115,10 @@ static class Head<E_IN, E_OUT> extends ReferencePipeline<E_IN, E_OUT> {
 
     public static void main(String[] args) {
         FunctionalInterfaceEjemplos objeto = new FunctionalInterfaceEjemplos();
-        objeto.mostrarData();
+        //objeto.mostrarData();
+        String [] array = {"hola", "hola"};
+        Consumer<String> action = System.out::println;
+        FunctionalInterfaceEjemplos.ejecutarCadaElemento(array, action);
     }
 
 }
