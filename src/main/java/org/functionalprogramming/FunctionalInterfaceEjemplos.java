@@ -1,5 +1,6 @@
 package org.functionalprogramming;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -48,6 +49,15 @@ public class FunctionalInterfaceEjemplos {
 
         numberList2.stream()
                 .map(n -> "Numeros" + n)
+                .forEach(System.out::println);
+    }
+
+    public void mostrarNombres(){
+        List<String> nombres = new ArrayList<>();
+        nombres = List.of("Juan","Pedro","Judas");
+
+        nombres.stream()
+                .map(n -> "Hola" + n)
                 .forEach(System.out::println);
     }
 
@@ -115,10 +125,8 @@ static class Head<E_IN, E_OUT> extends ReferencePipeline<E_IN, E_OUT> {
 
     public static void main(String[] args) {
         FunctionalInterfaceEjemplos objeto = new FunctionalInterfaceEjemplos();
-        //objeto.mostrarData();
-        String [] array = {"hola", "hola"};
-        Consumer<String> action = System.out::println;
-        FunctionalInterfaceEjemplos.ejecutarCadaElemento(array, action);
+        objeto.mostrarNombres();
+
     }
 
 }
