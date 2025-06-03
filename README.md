@@ -1,6 +1,6 @@
 # 🧠 JavaCodeDojo
 
-**JavaCodeDojo** es un proyecto personal de estudio y práctica continua con el objetivo de dominar Java de forma profunda y elegante.
+**JavaCodeDojo** es un proyecto personal de estudio y práctica con el objetivo entender los fundamentos y aplicarlos en código.
 
 Aquí exploro todo lo que me apasiona de la programación, desde lo más técnico a lo más creativo: algoritmos, estructuras de datos, patrones de diseño, colecciones, programación funcional y orientada a objetos, además de ejercicios prácticos de plataformas como HackerRank.
 
